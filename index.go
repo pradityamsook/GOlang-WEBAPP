@@ -19,7 +19,7 @@ func main(){
 func product(w http.ResponseWriter, t *http.Request){
 	fmt.Fprintf(w, "Product request")
 }
-
+/*function for request activity on http*/
 func user(hr http.ResponseWriter, t *http.Request){
 	fmt.Fprintf(hr, "user request")
 }
