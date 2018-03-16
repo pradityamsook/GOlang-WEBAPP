@@ -1,0 +1,64 @@
+Neal Wu’s last chance for international glory, and maybe America’s, too, begins with a sound like a hippo crunching through a field of dry leaves—the sound of 315 computer prodigies at 315 workstations ripping into 315 gray envelopes in unison. “You have five hours,” a voice booms across the packed gymnasium. “Good luck.”
+
+At his desk on the gym floor, Wu, age 18, pushes his glasses up on his nose and squints. He shouldn’t need luck. This is a coding competition—the International Olympiad in Informatics, held in August at the University of Waterloo in Ontario, Canada—and Wu is one of the world’s top competition programmers.
+
+
+Gold medals awarded at the International Olympiad in Informatics (1999-2009)
+He just graduated from Baton Rouge Magnet High School in Louisiana; his parents are chemical engineers originally from Shanghai, although Wu was born in the US. In seventh grade, he took first place in a nationwide contest for middle schoolers called Mathcounts. (There’s a Neal Wu fan club on Facebook that celebrates his “awesome math skills.”) Yet according to Rob Kolstad, the US team’s 57-year-old head coach, Wu is merely “very good” at math. His true gift is for creative problem-solving with code. In 2008, the first year he competed at the IOI, he finished 10th out of 300 contestants. In 2009, he moved up to seventh place. Since then, he has competed in six coding contests run by Kolstad’s organization, the USA Computing Olympiad; he won three of them with perfect scores. Wu has the relaxed disposition of a star athlete; he’s confident without ever letting on that he is America’s Great Nerd Hope. “I hate to say he’s the Tiger Woods of computer programming,” Kolstad says, “but he shares the properties of cool, calm under pressure, and consistent, consistent performance.”
+
+Cool or no, there are a lot of expectations on Wu as he shuffles through the contents of his gray envelope. Four stapled packets of paper. Four word problems designed to test programming prowess—specifically, the ability to crunch incredibly huge and complex data sets in seconds. For each problem, Wu first has to choose an algorithm, or series of computational steps. Then he has to code it. Wu’s coaches have drilled into his brain 16 standard algorithms with names like Two-Dimensional Convex Hull, Greedy, Eulerian Path, and Knapsack—an arsenal of mathematical machetes for hacking through thickets of numbers—and in Wu’s years of coding he has flexed and massaged the algorithms into no fewer than 100 subtle variations. But what makes IOI so difficult, unpredictable, and yes, even dramatic is that competitors like Wu may have to invent and code their own ad hoc algorithms on the spot. One-of-a-kind solutions to one-of-a-kind problems. From scratch. In five hours.
+
+It’s grueling work, so Wu starts out slowly. He flips through the problem sheets, scribbling an occasional note with his mechanical pencil. The dominant sound in the gym changes from the shuffling of paper to the clacking of keys, but Wu resists the urge to type right out of the gate. “Typing is hypnotic,” Kolstad says emphatically. “When you’re typing, you’re not solving problems.”
+
+But Wu’s nemesis, the Boy Wonder of Belarus, does not subscribe to this theory.
+
+A tall kid with skinny arms, short brown hair, and a bashful smile, Gennady Korotkevich started competing at IOI when he was 11. When Wu was 11, he didn’t even know about programming. At last year’s IOI in Bulgaria, Korotkevich upset Wu and everyone else to take first place, becoming the youngest winner in the contest’s 20-year history. This year Korotkevich is back again, at the ripe age of 15, looking to deprive Wu of his last shot at winning IOI. Next year Wu will be in college and therefore ineligible.
+
+Photo: Michael Schmelling
+Clockwise from top left: A printout of the Maze problem; Gennady Korotkevich of Belarus; work in progress on Maze; American Neal Wu.
+Photo: Michael Schmelling
+Their styles couldn’t be more different. While Wu is relaxed and thoughtful, Korotkevich is a jackrabbit. “My parents are programmers, and now I like it as well,” he says in tentative English. Unlike the sociable Wu (who interned at Facebook last summer), Korotkevich squirms when I talk to him about his abilities, insisting he’s nothing special. At IOI, he sticks close to his Belarus teammates and coaches. The gossip at IOI is 40 percent about the word problems, 10 percent about which country’s coaches have the best liquor (Canada, hands down), and 50 percent about Gennady Korotkevich. Ask the kids who’s going to win this year and regardless of whether they’re Kazakh or Japanese, Swiss or Egyptian, they’ll invariably grunt, “Belarus, Belarus.” And then they’ll start laughing, as if to say, haven’t you been paying attention?
+
+This morning, Korotkevich began typing five minutes and 40 seconds after the competition began. Like several of the elite competitors at IOI, he can code as fast as he can touch-type. Three minutes later, Korotkevich completed his first program: a mere 22 lines of Pascal.
+
+The three approved IOI programming languages are Pascal, C, and C++. The Western kids, including Wu, tend to use C++, the most modern and streamlined of the three. But Pascal still has a following in Eastern Europe and Asia, even though coding in it is like “building a car with just a screwdriver and a wrench,” says Troy Vasiga, this year’s IOI chair.
+
+ONE MURDER, TWO SOLUTIONS
+Competitors at the 2010 International Olympiad in Informatics tackled eight programming problems in two days of competition. Here’s one of the simpler challenges, along with the solutions supplied by Gennady Korotkevich and Neal Wu. Of the 315 competitors, 269 received a perfect score.
+
+The Task: Dr. Black has been murdered. Detective Jill must determine the murderer, crime scene, and weapon. There are six possible murderers (numbered 1 through 6, Professor Plum to Mrs. Peacock), 10 locations (1 through 10, ballroom to cellar), and six weapons (1 through 6, lead pipe to spanner). Detective Jill tries to guess the correct combination (there are 360 possibilities). Each guess is a theory. She asks her assistant, Jack, to confirm or refute each theory. When Jack refutes a theory, he reports that one of the guesses—murderer, location, or weapon—is wrong. The contestants are tasked with implementing a procedure that plays the role of Detective Jill. A brute-force program that tests all 360 theories earns a mere 50 points. An efficient program that tests no more than 20 theories earns an additional 50.
+
+
+Korotkevich’s solution: Clear-headed and sleek. He sets up three variables, x, y, and z, to represent the murderers, locations, and weapons, respectively. Then he systematically tries all the combinations in order, increasing the variables incrementally. In other words, if his first theory is 1, 1, 1 and the computer tells him that the location is incorrect, his next theory is 1, 2, 1. This is efficient because all he has to do is keep track of which murderer, which location, and which weapon to try next. That’s just three things to remember.
+
+Language: Pascal
+
+Lines of code: 22
+
+
+Wu’s solution: Successful but more complicated than necessary. Wu first sets up a master list of all murderers, locations, and weapons. To do this, he creates three arrays called, naturally, mur, loc, and wep. Then he loops through the arrays, crossing off incorrect guesses as he goes. Each time he forms a theory, he searches all three lists to find a murderer, a place, and a weapon that hasn’t been crossed off.
+
+Language: C++
+
+Lines of code: 46
+
+Korotkevich uploads his Pascal code to a network of 10 machines running a set of grading programs. Appropriately, there are no human graders at IOI; instead, robots provide immediate results, which in 2010 were posted for the first time on a live online scoreboard. A few seconds after Korotkevich submits a solution, his program receives a perfect 100 and the scoreboard shows him in first place.
+
+At the 20-minute mark, Korotkevich posts a perfect score on his second problem, going up 200 points on Wu.
+
+Meanwhile, Wu picks up his mechanical pencil, clicks the lead a couple of times, puts it back down. He likes to alternate between a mechanical pencil and a pen, drawing graph axes in ink and labeling the vertices in pencil, which allows him to erase if he wants to backtrack. He’s still thinking, still strategizing. He has yet to write a single line of code.
+
+At the one-hour mark, Korotkevich runs his score up to 255. He’s cruising now.
+
+Wu, a smallish kid with black hair that is less unkempt than that of your ordinary nerd, cranes his neck and glances around the gym, taking in the scene: kids from 83 countries, their desks arranged in cloverleaf clusters of four, looking—despite their races and nationalities—like members of the same tribe. Many are wearing the black Google T-shirt that was stuffed into their IOI schwag bag, and most of the rest are decked out in team-issue polos or T-shirts from prior competitions. (Notable exceptions: the three young women in head scarves representing Team Libya.) Korotkevich is out there somewhere, a mysterious wraith in a blue pullover. Wu has no idea how well his rival is doing—during each competition period, the kids can see only their own scores—but the contest organizers certainly know. They’re up in the gym balcony, tracking the live scoreboard on their laptops. And it looks pretty bad. Wu is not even on the board yet. This is a slaughter in the making.
+
+And then, 70 minutes into the competition, Wu places his fingers on the keyboard.
+
+Competitive programming may strike you as history’s worst idea for a sport—shuffleboard minus the bracing speed, the Scripps National Spelling Bee without the adorableness. In fact, battle-coding is a surprisingly popular global pastime, indulged in by thousands of high-school and middle-school programming clubs and turbocharged by websites like TopCoder, a sort of social networking and gaming site for algorithm nuts. At TopCoder, kids and adults alike battle one another to solve IOI-style problems for cash prizes. Member ID neal_wu shows up in red, signifying elite status. To get your name in this color, you need a TopCoder rating of 2,200 or better. To become a “target”—the elite of the elite—you need at least 3,000. Wu’s rating is 3,248, making him number six in the world. (Korotkevich also has a TopCoder handle, tourist, and is ranked number five.)
+
+As if TopCoder weren’t enough, many of the national programming teams host their own sites, where they post sample problems and practice exams. The USA Computing Olympiad site is run by Kolstad, who also holds a weeklong camp every year for 15 elite American coders—at the end of that week, the four-person IOI team is selected. With his thick shoulders and deep bellowing voice, Kolstad seems more like a football coach than a computer guy. “I don’t know how to do most of the algorithms,” he says. He prefers to focus on mental preparation and attitude: “Just like Vince Lombardi, who, of course, didn’t play football on the field with his players.”
+
+The Training Pages section of USACO.org is open to coders from all countries, but Kolstad says it’s dominated by the Chinese, who have been commanding the team portion of IOI for as long as anyone can remember (“n large years,” in IOI-speak). They also dominate the International Collegiate Programming Contests. In February, a team from China’s Shanghai Jiaotong University won the ICPC world championship in a stroll, while several American universities tied with 16 other countries and foreign universities for 14th place. The trend is the same in both contests: Western decline, Eastern ascendance. Since international collegiate coding competitions began in 1977, US universities won the first 13 ICPC contests in a row and went on to earn four titles in the 1990s; the 1993 champion squad from Harvard included a young Tony Hsieh, now CEO of Zappos. But the last American victory came in 1997, and since then the contest has been ruled by Russia, China, and Poland. “We’re getting outtrained,” Kolstad laments.
+
+China’s approach to IOI is proof of just how serious the contest has become and how tied up it is in notions of national prestige and economic competitiveness. To earn a spot on the Chinese team, a coder has to beat 80,000 of his compatriots in a series of provincial elimination rounds that last an entire year. Then he—the competitors are almost all male—has to sit on a stage in front of hundreds of onlookers and answer questions in English like “How will you show the traditional culture of China to the foreign friends?” says Yi Wu, a member of China’s team. China is an extreme example, but pretty much every kid roaming the Waterloo campus this week has beaten hundreds or thousands of countrymen just to get here. Even the losers are brilliant.
+

@@ -1,0 +1,2 @@
+Glad you come!
+I'm feeling good for learning golang web applications

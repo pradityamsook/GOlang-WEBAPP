@@ -1,0 +1,29 @@
+{{define "main"}}
+<div class="jumbotron">
+        <h1 class="text-center">Editing {{.Title}}</h1>
+</div>
+
+<form action="/save/{{.Title}}" method="POST">
+      <div><textarea class="form-control" name="body" cols="80" rows="25">{{printf "%s" .Body}}</textarea></div>
+      <div><input class="btn btn-info" type="submit" value="Save"></div>
+</form>
+
+{{end}}
+
+{{define "navbar"}}
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+   <div class="container-fluid">
+   <li class="active"><a href="#">{{.Title}}<span class="sr-only">(current)</span></a></li>
+    <ul class="nav navbar-nav">
+        <li>
+            <button class="btn btn-danger navbar-btn"><a class="nav-link" href="/edit/test">Test</a></button>
+        </li>
+        <li>
+            <button class="btn btn-danger navbar-btn"><a class="nav-link" href="/edit/edit">Edit</a></button>
+        </li>
+    </ul>
+    </div>
+</nav>
+{{end}}
+
+
