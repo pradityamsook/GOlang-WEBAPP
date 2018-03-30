@@ -1,9 +1,9 @@
-package main 
+package main
 
 import (
-	"log"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"log"
 )
 
 func main() {
@@ -12,7 +12,7 @@ func main() {
 		log.Fatal(err)
 		return
 	}
-	
+
 	defer session.Close()
 	collection := session.DB("test").C("go")
 	err = collection.Insert(bson.M{"name": "Pradit"})

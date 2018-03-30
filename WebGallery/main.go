@@ -1,9 +1,13 @@
 package main
 
 import (
+	"database/sql"
+	_ "github.com/mattn/go-sqlite3"
 	"html/template"
 	"io/ioutil"
 	"net/http"
+	"strconv"
+	"time"
 )
 
 type Page struct {
@@ -11,12 +15,22 @@ type Page struct {
 	Body  []byte
 }
 
-var tmplView = template.Must(template.New("test").ParseFiles("base.html", "test.html", "index.html"))
-var tmplEdit = template.Must(template.New("edit").ParseFiles("base.html", "edit.html", "index.html"))
+var (
+	tmplView      = template.Must(template.New("test").ParseFiles("base.html", "test.html", "index.html"))
+	tmplEdit      = template.Must(template.New("edit").ParseFiles("base.html", "edit.html", "index.html"))
+	db, _         = sql.Open("sqlite3", "cache/web.db")
+	creatDatabase = "create table if not exists pages (title text, body blob, timestamp text)"
+)
 
-func (p *Page) save() error {
-	f := p.Title + ".txt"
-	return ioutil.WriteFile(f, p.Body, 0600)
+func (p *Page) saveCache() error {
+	timestamp := strconv.FormatInt(time.Now().Unix(), 10)
+	f := "cache/" + p.Title + ".txt"
+	db.Exec(creatDatabase)
+	tx, _ := db.Begin()
+	_, err := stmt.Exec(p.Title, p.Body, timestamp)
+	tx.Commit()
+	ioutil.WriteFile(f, p.Body, 0600)
+	return err
 }
 
 func load(title string) (*Page, error) {
@@ -54,7 +68,7 @@ func edit(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-        http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	p := &Page{Title: "Test", Body: []byte("Glad you come!")}
 	p.save()
 	http.HandleFunc("/test/", view)
