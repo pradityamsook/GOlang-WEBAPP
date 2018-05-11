@@ -21,7 +21,7 @@ var (
 	tmplView      = template.Must(template.New("test").ParseFiles("base.html", "test.html", "index.html"))
 	tmplEdit      = template.Must(template.New("edit").ParseFiles("base.html", "edit.html", "index.html"))
 	tmplUpload    = template.Must(template.New("upload").ParseFiles("base.html", "upload.html", "index.html"))
-	db, _         = sql.Open("sqlite3", "cache/web.db")
+	db, _         = sql.Open("sqlite3", "cache/web.db") //Connection to some database
 	creatDatabase = "create table if not exists pages (title text, body blob, timestamp text)"
 )
 
